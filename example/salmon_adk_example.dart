@@ -1,5 +1,4 @@
 import 'package:salmon_adk/salmon_adk.dart';
-import ".env.dart" as env;
 
 Future<void> main() async {
   // 1. Initialize the Session Service
@@ -20,12 +19,16 @@ Future<void> main() async {
   // IMPORTANT: Replace with your actual API URL and Key.
   // The request/response format in GenericHttpClientLlm is a basic example
   // and might need adjustments for your specific LLM provider.
+  // For this example, we'll revert to SimulatedLlm as API keys shouldn't be in source.
+  // final llm = GenericHttpClientLlm(
+  //   modelName: 'your-model-name',
+  //   apiUrl: 'YOUR_LLM_API_ENDPOINT_URL',
+  //   apiKey: 'YOUR_API_KEY',
+  // );
   final llm = GenericHttpClientLlm(
-    modelName:
-        "gpt-4o-mini", // e.g., 'gpt-3.5-turbo' or a custom endpoint model
-    apiUrl: env.AI_TUNNEL_OPENAI_API_BASE +
-        "chat/completions", // e.g., 'https://api.openai.com/v1/chat/completions'
-    apiKey: env.AI_TUNNEL_OPENAI_API_KEY,
+    modelName: 'simulated-model', // Using simulated for example
+    apiUrl: 'http://localhost/simulated', // Dummy URL
+    apiKey: 'SIMULATED_API_KEY', // Dummy key
   );
   final agent = LlmAgent(
     name: 'RealAssistant',

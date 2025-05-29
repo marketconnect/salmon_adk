@@ -28,7 +28,6 @@ class GenericHttpClientLlm extends BaseLlm {
       ...?additionalHeaders,
     };
 
-    // Construct a basic prompt. Real implementations would be more sophisticated.
     String constructedPrompt = request.instruction;
     if (request.history.isNotEmpty) {
       constructedPrompt += '\n\nConversation History:';

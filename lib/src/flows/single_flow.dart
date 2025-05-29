@@ -67,7 +67,7 @@ class SingleFlow extends BaseLlmFlow {
                 'response': toolResult,
               }
             },
-            actions: toolContext.actions,
+            actions: toolContext.eventActions,
           );
           yield functionResponseEvent;
 

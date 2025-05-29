@@ -3,6 +3,8 @@ library salmon_adk;
 
 export 'src/agents/agent.dart';
 export 'src/agents/llm_agent.dart';
+export 'src/agents/readonly_context.dart';
+export 'src/agents/callback_context.dart';
 export 'src/agents/invocation_context.dart';
 export 'src/events/event_actions.dart';
 export 'src/events/event.dart';
